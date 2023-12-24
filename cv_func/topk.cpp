@@ -21,6 +21,8 @@ int topk(std::vector<int>& src, int k, std::vector<int>& dst){
 }
 
 int main(){
+    int a = 10;
+    int b = ~a;
     std::vector<int> src(1000000);
     std::iota(src.begin(), src.end(), 0);
     std::random_shuffle(src.begin(), src.end(), [](int i){return rand() % i;});

@@ -9,6 +9,7 @@ public:
             dp[i] = std::max(dp[i - 1] + nums[i], nums[i]);
         }
         int ret = *std::max_element(dp.begin(), dp.end());
+        return ret;
     }
 
     int maxSubArray(vector<int>& nums) {  // 状态压缩

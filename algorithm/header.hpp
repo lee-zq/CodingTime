@@ -6,6 +6,7 @@
 #include <unordered_set>
 #include <chrono>
 #include <random>
+#include <queue>
 
 #include <iostream>
 
@@ -20,5 +21,20 @@ struct ListNode {
     int val;
     ListNode *next;
     ListNode(int x) : val(x), next(NULL) {}
+};
+
+class Node
+{
+public:
+    int val;
+    Node* next;
+    Node* random;
+
+    Node(int _val)
+    {
+        val = _val;
+        next = NULL;
+        random = NULL;
+    }
 };
  

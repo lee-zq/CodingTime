@@ -33,9 +33,8 @@ float iou(const Box& box1, const Box& box2) {
     int height = std::max(0, y2 - y1 + 1);
 
     int intersection = width * height;
-
-    int area1 = (box1.x2 - box1.x1 + 1) * (box1.y2 - box1.y1 + 1);
-    int area2 = (box2.x2 - box2.x1 + 1) * (box2.y2 - box2.y1 + 1);
+    int area1 = box1.area();
+    int area2 = box2.area();
 
     float iou = static_cast<float>(intersection) / (area1 + area2 - intersection);
 
@@ -44,10 +43,7 @@ float iou(const Box& box1, const Box& box2) {
 
 void nms(std::vector<Box>& input_boxes, float threshold, std::vector<Box>& output_boxes)
 {
-    std::sort(input_boxes.begin(), input_boxes.end(), [](const Box& a, const Box& b)
-    {
-        return a.area() > b.area();
-    });
+    std::sort(input_boxes.begin(), input_boxes.end(), [](const Box& a, const Box& b) { return a.score > b.score; });
 
     while (input_boxes.size() > 0)
     {
@@ -90,4 +86,3 @@ int main(int argc, char** argv)
 
     return 0;
 }
-```

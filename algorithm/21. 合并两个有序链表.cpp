@@ -1,4 +1,3 @@
-
 #include "header.hpp"
 /**
  * Definition for singly-linked list.
