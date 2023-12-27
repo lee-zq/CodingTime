@@ -7,6 +7,7 @@
 #include <chrono>
 #include <random>
 #include <queue>
+#include <stack>
 
 #include <iostream>
 
