@@ -15,6 +15,10 @@ std::vector<int> get_rand_vec(int len=100, int seed = 0){
 
 class Solution {
 public:
+/*
+解析：N^2解法直接遍历最为直观，但也可以在遍历过程中，将当前元素和下标的键值对存储到map，在后续遍历过程中
+如果发现（target-当前值）在map中，则找到答案；否则继续将当前元素和下标的键值对存储到map。
+*/
     std::vector<int> twoSum_v0(std::vector<int>& nums, int target) {
         for (int i = 0; i < nums.size();i++){
             for (int j = i + 1; j < nums.size();j++){
@@ -23,7 +27,7 @@ public:
                 }
             }
         }
-            return std::vector<int>();
+        return std::vector<int>();
     }   
     
     std::vector<int> twoSum(std::vector<int>& nums, int target) {

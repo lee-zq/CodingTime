@@ -2,6 +2,10 @@
 
 class Solution {
 public:
+/*
+解析：要求将所有0移动到末尾，双指针遍历，在遍历指针i遇到值不为0的元素时，将其值赋给遍历指针j所在位置，j++。i++
+遍历完之后将指针j之后的位置都复位0；
+*/
     void moveZeroes(vector<int>& nums) {
         int i = 0;
         int j = 0;

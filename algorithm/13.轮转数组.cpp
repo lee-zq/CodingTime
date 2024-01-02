@@ -3,6 +3,9 @@
 class Solution
 {
 public:
+/*
+解析：轮转数量k先进行k%n取模；然后前k个数据先保存，然后一次性赋值，最后将k个先保存的数据填入
+*/
     void rotate(vector<int>& nums, int k)
     {
         if (nums.size()==0){

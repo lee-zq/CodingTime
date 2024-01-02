@@ -3,6 +3,9 @@
 class Solution
 {
 public:
+/*
+解析：使用栈进行匹配，匹配则消除匹配对，直到遍历完，栈为空则括号有效
+*/
     bool isValid(string s)
     {
         std::vector<char> stack;

@@ -2,6 +2,14 @@
 
 class Solution {
 public:
+    /*
+解析：简单粗暴三层循环，但这不能叫算法了；
+考虑固定一个值，然后在其他位置寻找和为当前固定值的相反数。
+先将数组升序排序，可以将遍历过程进行剪枝。
+1. 最外层i遍历所有值，其实只要遍历到值大于0的数后就可以终止了，用为i后面大于0的数不可能和为负数。
+2. L = i+1,R=n-1;在L<R的条件下遍历[i+1,n-1]范围，记录和为固定值负数的项。遍历过程和太大则R--，太小则L++；
+ps:遇到相同值则continue,包括i，L，R
+*/
     vector<vector<int>> threeSum(vector<int>& nums) {
         vector<vector<int>> res;
         if (nums.size()<3){

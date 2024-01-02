@@ -4,6 +4,10 @@ using namespace std;
 
 class Solution {
 public:
+/*
+解析：将每个字符串元素sort()后的值作为key，原始字符串作为vector<string>的元素保存，构建map，最后将map转为
+vector<string>即为答案
+*/
     vector<vector<string>> groupAnagrams(vector<string>& strs) {
         std::map<std::string, std::vector<std::string>> m;
         for (auto& it : strs){

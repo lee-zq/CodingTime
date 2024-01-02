@@ -1,7 +1,14 @@
 #include "header.hpp"
+/*
+题目描述：在随机数组中找到一个连续递增(前后项之差为1)的序列，返回最大长度
+*/
 
 class Solution {
 public:
+/*
+解析：先将数组排序，再遍历数组：遍历时分三种情况：
+1.当前值比前一个值大1：+1；2.当前值==前一个值：+0；3.其他情况：累计值重置为1；
+*/
     int longestConsecutive(vector<int>& nums) {
         if (nums.size()==0)
             return 0;

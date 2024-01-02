@@ -12,6 +12,10 @@
 class Solution
 {
 public:
+/*
+解析：类似于竖式求和一样，从低位向高位递推，注意每次计算的value值为模，进位为商，当
+两个链表都遍历完后终止，但需要再次判断进位是否非0以确定是否再追加节点
+*/
     ListNode* addTwoNumbers(ListNode* l1, ListNode* l2)
     {
         if (l1 == nullptr && l2 == nullptr)
