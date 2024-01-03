@@ -3,6 +3,9 @@
 class Solution
 {
 public:
+/*
+解析：代码和二分查找非常相似，唯一不同的是while (left <= right)，返回值是left
+*/
     int searchInsert(vector<int>& nums, int target)
     {
         int left = 0;

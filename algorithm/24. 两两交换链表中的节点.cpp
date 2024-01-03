@@ -13,6 +13,10 @@
 class Solution
 {
 public:
+/*
+解析：先构建一个伪头节点，以此节点为起始，在next和next->next都存在的条件下，交换这两个节点
+最后返回伪头节点的next
+*/
     ListNode* swapPairs(ListNode* head)
     {
         ListNode* fake_node = new ListNode(-1, head);

@@ -3,6 +3,10 @@
 class Solution
 {
 public:
+    /*
+解析：解法和二分查找类似，只是在更新搜索区域的时候需要判断target在旋转排序数组的左侧区域还是右侧区域
+通过将nums[mid]和nums[0]比较，可以判断mid在哪个范围内，然后在各自范围内进行搜索区域更新。
+*/
     int search(vector<int>& nums, int target)
     {
         int left = 0;

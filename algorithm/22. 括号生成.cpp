@@ -3,6 +3,9 @@
 class Solution
 {
 public:
+/*
+解析，递归生成多有可能的长度为2n的括号字符串，在长度满足条件的前提下，判断合法性，然后存入结果数组
+*/
     // 递归生成所有长度为2*n的括号字符串
     // 判断合法括号字符串的保存
     vector<string> generateParenthesis(int n)

@@ -3,6 +3,9 @@
 class Solution
 {
 public:
+/*
+解析：先二分查找。锁定目标某一个位置，然后向左右遍历。直到遇到不一样的值或到达边界
+*/
     vector<int> searchRange(vector<int>& nums, int target)
     {
         int pos = find_target(nums, target);

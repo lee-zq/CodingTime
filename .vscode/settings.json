@@ -79,7 +79,9 @@
     "numbers": "cpp",
     "semaphore": "cpp",
     "stop_token": "cpp",
-    "ios": "cpp"
+    "ios": "cpp",
+    "queue": "cpp",
+    "stack": "cpp"
   },
   "editor.minimap.enabled": true,
   "C_Cpp.autocomplete": "default",
