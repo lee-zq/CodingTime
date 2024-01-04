@@ -3,6 +3,9 @@
 class Solution
 {
 public:
+/*
+解析：旋转前后的索引位置对应关系：[i,j] <=> [j, n-1-i]
+*/
     void rotate(vector<vector<int>>& matrix)
     {
         int n = matrix.size();

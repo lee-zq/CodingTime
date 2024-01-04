@@ -3,6 +3,10 @@
 class Solution
 {
 public:
+/*
+解析：在遍历过程中判断索引是否小于当前可达最远位置，是则根据当前索引的值更新可达最远位置
+如果最后最远可达位置能到最后一个元素位置，则表示能走完，否则返回false
+*/
     bool canJump(vector<int>& nums)
     {
         int n = nums.size();

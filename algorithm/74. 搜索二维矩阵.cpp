@@ -3,6 +3,9 @@
 class Solution
 {
 public:
+/*
+解析：二维二分查找。先定位行，然后二分查找
+*/
     bool searchMatrix(vector<vector<int>>& matrix, int target)
     {
         int row = matrix.size();

@@ -2,6 +2,10 @@
 
 class Solution {
 public:
+/*
+解析：只有三种元素，一种解法是统计后再直接按顺序赋值
+第二种解法是用双指针，第一次遍历将所有0置换到最前面，第二次遍历将1置换到0后面，结束
+*/
     void sortColors(vector<int>& nums) {
         int cnt[3]=  {0,0,0};
         for (size_t i = 0; i < nums.size(); i++)

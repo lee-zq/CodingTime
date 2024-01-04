@@ -3,6 +3,9 @@
 class Solution
 {
 public:
+/*
+解析：一维dp问题，斐波那契数列（状态压缩）
+*/
     int climbStairs(int n)
     {
         if(n==1){

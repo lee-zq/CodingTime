@@ -3,6 +3,9 @@
 class Solution
 {
 public:
+/*
+解析：记录哪行哪列是0，然后遍历赋值
+*/
     void setZeroes(vector<vector<int>>& matrix)
     {
         std::vector<int> m(matrix.size(), 1);

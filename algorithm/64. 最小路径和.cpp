@@ -2,6 +2,12 @@
 
 class Solution {
 public:
+/*
+解析：类似于求路径和的问题，典型dp二维最优路径问题。
+可以归纳出递推公式：dp[i,j] = min(dp[i-1,j],dp[i,j-1]) + grid[i,j]
+dp表第一行和第一列可以方便求出，每个位置的最小路径是前一个最小路径+当前位置的值
+然后在([1,1],[m-1,n-1])范围内递推求出所有结果，最后[m-1,n-1]位置的值即为最小路径和
+*/
     int minPathSum(vector<vector<int>>& grid) {
         vector<vector<int>> dp(grid.size(), vector<int>(grid[0].size(), 0));
         int base;

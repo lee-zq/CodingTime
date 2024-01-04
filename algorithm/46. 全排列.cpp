@@ -3,6 +3,10 @@
 class Solution
 {
 public:
+/*
+解析：典型回溯问题。全排列。构造辅助递归函数backtrack,用select表示nums中已选择和未选择的数据状态
+在state长度和nums长度相等时，表示所有数据都已被选择了一遍，保存一个结果。
+*/
     vector<vector<int>> permute(vector<int>& nums)
     {
         vector<int> state;
