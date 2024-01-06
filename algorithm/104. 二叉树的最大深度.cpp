@@ -2,7 +2,15 @@
 
 class Solution {
 public:
-    int maxDepth_bfs(TreeNode* root) {
+    /*
+解析：两种方式求解：
+1.直观的层序遍历，每遍历一层，高度加一，并将非空子节点作为新的遍历层，直到遍历层为空，得到高度。
+2.递归解法，dfs(TreeNode* root, int cur_height, int& max_height). 初始状态下cur_height=0
+在遍历过程种，往下遍历一层则cur_height++, 最后在节点为空是，比较当前高度cur_height和max_height
+更新max_height
+*/
+    int maxDepth_bfs(TreeNode* root)
+    {
         if (root==nullptr){
             return 0;
         }

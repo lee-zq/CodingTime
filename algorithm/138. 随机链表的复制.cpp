@@ -18,6 +18,13 @@ public:
 class Solution
 {
 public:
+    /*
+解析：随机链表的节点包含两个指针：next和random。
+先利用链表特性，将源节点和新节点作为键值对存储到map，然后
+重新依次遍历源节点：
+map[源节点]->next = map[源节点->next];
+map[源节点]->random = map[源节点->random];
+*/
     Node* copyRandomList(Node* head)
     {
         if (head == nullptr)

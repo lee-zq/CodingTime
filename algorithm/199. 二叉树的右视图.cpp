@@ -13,6 +13,9 @@
 
 class Solution {
 public:
+/*
+解析：二叉树层序遍历，每层取最后一个元素记录即可
+*/
     vector<int> rightSideView(TreeNode* root) {
         vector<int> ans;
         if (root==nullptr){

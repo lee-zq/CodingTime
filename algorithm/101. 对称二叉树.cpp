@@ -2,6 +2,10 @@
 
 class Solution {
 public:
+/*
+解析：一个二叉树是对称二叉树，也就是左右子树互为翻转二叉树。
+而且是递归的左子树的左子树和右子树的右子树对称
+*/
     bool isSymmetric(TreeNode* root) {
         return same(root->left, root->right);
     }

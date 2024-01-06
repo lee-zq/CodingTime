@@ -13,6 +13,13 @@
  */
 class Solution {
 public:
+/*
+二叉搜索树：根节点值大于左子树最大值且小于右子树最小值，即max(root->left) < root->val < min(root->right)
+解析：可以理解为，每个节点存在一个上界和下界，下届为左子树最大值，上界为右子树最小值。递归属性。
+当当前节点为空则为true，当当前节点值不在当前上下界内，则为false。在此基础上，左子树上界为当前节点值，下界不更新；
+右子树下界为当前节点值，上界不更新。分别求得左右子树的二叉平衡性，都满足则为true，否则false
+
+*/
     bool isValidBST(TreeNode* root) {
         return helper(root, LONG_MIN, LONG_MAX);
     }

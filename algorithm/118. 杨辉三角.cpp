@@ -3,6 +3,13 @@
 class Solution
 {
 public:
+/*
+解析：求解杨辉三角的第n行，关键是找到dp递推关系式。
+dp[n] = 1. dp[n-1]的相邻项相加得到长度为n-1的数组
+        2. 在上一步结果的左右端插入1，得到长度为n+1的数组，即为结果
+
+Ps:状态可压缩。
+*/
     vector<vector<int>> generate(int numRows)
     {
         vector<vector<int>> ans(numRows, vector<int>{});

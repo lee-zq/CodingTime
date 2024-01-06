@@ -2,6 +2,9 @@
 
 class Solution {
 public:
+/*
+解析：遍历+集合+搜索，比较直观，第二种解法视为链表，太罗嗦了
+*/
     int findDuplicate(vector<int>& nums) {
         std::set<int> s;
         for(auto& item : nums){

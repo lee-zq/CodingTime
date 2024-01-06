@@ -13,6 +13,9 @@
 
 class Solution {
 public:
+/*
+解析：递归遍历到数组中，然后串联
+*/
     void flatten(TreeNode* root) {
         vector<TreeNode*> array;
         preOrder(root, array);

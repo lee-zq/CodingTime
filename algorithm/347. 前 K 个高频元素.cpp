@@ -3,6 +3,11 @@
 class Solution
 {
 public:
+/*
+tips:一般求第k个、前k个，都需要排序，最好是堆化（c++原地操纵）
+解析：按元素值和数量的键值对存储，并转移到vector存储，然后堆化（大顶堆，指定比较函数）
+然后pop_head k次。获取前k个元素。
+*/
     vector<int> topKFrequent(vector<int>& nums, int k)
     {
         std::unordered_map<int, int> m;

@@ -13,6 +13,10 @@
 
 class Solution {
 public:
+/*
+解析：运用了二叉搜索树的有序性质，即二叉搜索树的中序遍历是升序的。
+所以直接中序遍历二叉搜索树，然后取第k个值
+*/
     vector<int> in_order_arr;
     int kthSmallest(TreeNode* root, int k)
     {

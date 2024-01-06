@@ -10,6 +10,10 @@
 class Solution
 {
 public:
+/*
+解析：如何判断一个链表有环。作快慢两个指针，快指针步长为2，慢指针步长为1.
+如果存在环，则必定存在快慢指针相等的时刻。否则快指针会先遍历到结尾，跳出循环返回false
+*/
     bool hasCycle(ListNode* head)
     {
         if (head == nullptr || head->next == nullptr)

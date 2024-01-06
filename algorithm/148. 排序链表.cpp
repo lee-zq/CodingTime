@@ -11,6 +11,10 @@
  */
 class Solution {
 public:
+/*
+解析：投机取巧，将节点值或者节点地址直接存储再vector中，然后调用stl sort算法，
+然后依次赋值
+*/
     ListNode* sortList(ListNode* head) {
         ListNode* tmp = head;
         std::vector<int> arr;
