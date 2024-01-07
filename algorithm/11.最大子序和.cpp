@@ -7,6 +7,8 @@ public:
 dp[i] = max(dp[i-1]+nums[i], nums[i]) 得到下一个元素结尾的最大子序列和
 
 ps:由于状态转移之和前一个状态相关，那么dp表可以压缩到O(1)空间;
+
+其实就是正元素的和
 */
     int maxSubArray(vector<int>& nums) {
         std::vector<int> dp(nums.size(), 0);

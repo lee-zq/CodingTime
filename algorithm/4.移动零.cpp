@@ -26,7 +26,10 @@ public:
 int main(){
     Solution s;
     std::vector<int> src = {0,1,0,3,12,0,11,22};
-    s.moveZeroes(src);
+    auto f = [](int& _, int& b) { return !b; };
+    std::sort(src.begin(), src.end(), f);
+    
+    // s.moveZeroes(src);
     for (auto i:src){
         std::cout << i << " ";
     }

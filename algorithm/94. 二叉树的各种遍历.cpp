@@ -35,32 +35,32 @@ public:
         inorder(root->right, ret);
     }
 
-    void preorder(TreeNode* head, vector<int>& ret)
+    void preorder(TreeNode* root, vector<int>& ret)
     {
-        if (head == nullptr)
+        if (root == nullptr)
         {
             return;
         }
-        ret.push_back(head->val);
-        preorder(head->left, ret);
-        preorder(head->right, ret);
+        ret.push_back(root->val);
+        preorder(root->left, ret);
+        preorder(root->right, ret);
     }
 
-    void postorder(TreeNode* head, vector<int>& ret)
+    void postorder(TreeNode* root, vector<int>& ret)
     {
-        if (head == nullptr)
+        if (root == nullptr)
         {
             return;
         }
-        postorder(head->left, ret);
-        postorder(head->right, ret);
-        ret.push_back(head->val);
+        postorder(root->left, ret);
+        postorder(root->right, ret);
+        ret.push_back(root->val);
     }
 
-    void bfs_order(TreeNode* head, vector<int>& ret)
+    void bfs_order(TreeNode* root, vector<int>& ret)
     {
         ret.clear();
-        queue<TreeNode*> q = {head};
+        queue<TreeNode*> q = {root};
         while (!q.empty())
         {
             TreeNode* node = q.pop();
