@@ -30,11 +30,11 @@ public:
         int ret = 0;
         for (int i = 0; i < nums.size(); i++)
         {
-            pre += nums[i];
-            if (mp.find(pre-k)!=mp.end()){
+            pre += nums[i]; // 0. 计算当前前缀和
+            mp[pre] = 1; // 1. 将当前前缀和存入map
+            if (mp.find(pre-k)!=mp.end()){  // 2. 查找是否有当前前缀和-k的值在map中，存在则累积这个值。
                 ret += mp[pre];
             }
-            mp[pre] = 1;
         }
     }
 };
