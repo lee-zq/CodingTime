@@ -13,11 +13,11 @@ class Solution
 {
 public:
     /*
-解析：经典简介好问的问题。
+解析：经典简洁、好问的问题。
 遍历解法：构建两个指针pre和cur，都初始化为nullptr。
 在遍历过程在，先缓存cur的next节点为next_node，
 然后将cur的next置为pre的值。
-然后将pre置为cur的值，cur置为缓存next_node. 遍历到结束后返回pre
+然后将pre置为cur的值，cur置为缓存的next_node. 遍历到结束后返回pre
 */
     ListNode* reverseList(ListNode* head)
     {

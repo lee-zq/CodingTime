@@ -11,7 +11,7 @@ public:
                 s_inst_ = std::shared_ptr<Singleton>(new Singleton);
             }
         }
-        return s_inst_;            
+        return s_inst_;
     }
 
 private:

@@ -73,7 +73,7 @@ public:
             std::unique_lock<std::mutex> lock(this->mutex_);
             stop_ = true;
         }
-        for (auto& it  : workers_){
+        for (auto& it : workers_){
             if (it.joinable())
                 it.join();
         }

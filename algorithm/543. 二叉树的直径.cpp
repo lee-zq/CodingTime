@@ -19,8 +19,8 @@ public:
         if (root==nullptr){
             return 0;
         }
-        int L = depth(root->left);
-        int R = depth(root->right);
+        int L = depth(root->left, ans);
+        int R = depth(root->right, ans);
         ans = std::max(ans, R + L + 1);
         return std::max(L, R) + 1;
     }

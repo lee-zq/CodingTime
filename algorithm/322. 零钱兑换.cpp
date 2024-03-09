@@ -23,6 +23,6 @@ public:
                 }
             }
         }
-        return dp[i] > amount ? -1 : dp[i];
+        return dp.back() > amount ? -1 : dp.back();
     }
 };

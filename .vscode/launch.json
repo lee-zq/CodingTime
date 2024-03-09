@@ -10,6 +10,7 @@
         "request": "launch",
         "program": "${fileDirname}/${fileBasenameNoExtension}.o",
         "args": [],
+        "environment": [{"name": "LD_LIBRARY_PATH", "value": "./:$LD_LIBRARY_PATH"}],
         "cwd": "${fileDirname}",
             "setupCommands": [
                 {
@@ -17,11 +18,11 @@
                     "text": "-enable-pretty-printing",
                     "ignoreFailures": true
                 },
-                {
-                    "description": "支持STL容器格式化查看",
-                    "text": "python import sys;sys.path.insert(0, '/usr/share/gcc/python');from libstdcxx.v6.printers import register_libstdcxx_printers;register_libstdcxx_printers(None)",
-                    "ignoreFailures": false
-                }
+                // {
+                //     "description": "支持STL容器格式化查看",
+                //     "text": "python import sys;sys.path.insert(0, '/usr/share/gcc/python');from libstdcxx.v6.printers import register_libstdcxx_printers;register_libstdcxx_printers(None)",
+                //     "ignoreFailures": false
+                // }
             ],
         "preLaunchTask": "C/C++:g++ build"
     },
