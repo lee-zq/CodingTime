@@ -46,11 +46,42 @@ void select_sort(std::vector<int>& src)
         src[max_idx] = tmp;
     }
 }
+void swap(int* a, int* b)
+{
+    int tmp = *a;
+    *a = *b;
+    *b = tmp;
+}
+
+void quickSort(std::vector<int>& nums, int start, int end)
+{
+    int left = start;
+    int right = end;
+    int key = nums[start];
+    while (left < right)
+    {
+        while (left < right && nums[left] <= key)
+        {
+            left++;
+        }
+        while (left < right && nums[right] >= key)
+        {
+            right--;
+        }
+        swap(&nums[left], &nums[right]);
+    }
+    // left==right 终止
+    swap(&nums[start], &nums[left]);
+    // 递归
+    quickSort(nums, start, left - 1);
+    quickSort(nums, left, right);
+}
 
 int main()
 {
     auto src = get_rand_vec(10);
-    select_sort(src);
+    // select_sort(src);
+    quickSort(src, 0, src.size() - 1);
     for (size_t i = 0; i < src.size(); i++)
     {
         std::cout << src[i] << ", ";

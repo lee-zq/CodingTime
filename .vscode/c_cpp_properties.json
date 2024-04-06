@@ -8,7 +8,7 @@
                 "/usr/include/c++/11"
             ],
             "defines": [],
-            "compilerPath": "/usr/bin/g++", //编译器路径
+            "compilerPath": "/usr/bin/g++",
             "cStandard": "c11",
             "cppStandard": "c++11",
             "intelliSenseMode": "clang-x64"

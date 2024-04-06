@@ -34,3 +34,10 @@ public:
         return res;
     }
 };
+
+int main(){
+    std::vector<std::vector<int>> input = {{1,2},{4,5},{5,6},{8,10},{9,11}};
+    Solution s;
+    auto ret = s.merge(input);
+    return 0;
+}

@@ -9,7 +9,7 @@ public:
         if (root==nullptr){
             return root;
         }
-        invertTree(root->left);
+        invertTree(root->left); 
         invertTree(root->right);
         TreeNode* tmp = root->left;
         root->left = root->right;
