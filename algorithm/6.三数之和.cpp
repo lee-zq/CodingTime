@@ -18,7 +18,7 @@ ps:遇到相同值则continue,包括i，L，R
         std::sort(nums.begin(), nums.end());
         for (int i = 0; i < nums.size();i++){
             if (nums[i]>0){
-                return res;
+                break;
             }
             if (i>0 && nums[i]==nums[i-1]){
                 continue;
