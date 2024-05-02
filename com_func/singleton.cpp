@@ -27,3 +27,9 @@ std::mutex Singleton::mutex_;
 int main(){
     std::shared_ptr<Singleton> s = Singleton::get_instance();
 }
+
+AI+HPC 
+深度学习算法落地过程中涉及的模块：
+算法(训练)-》工程部署-》上层应用
+    |           |
+训练框架《==》推理引擎

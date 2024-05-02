@@ -1,6 +1,7 @@
 #include <vector>
 #include <algorithm>
 #include <numeric>
+
 std::vector<int> get_rand_vec(int len=100, int seed = 0){
     srand(seed);
     std::vector<int> src(len);

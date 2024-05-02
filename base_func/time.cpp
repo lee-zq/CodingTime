@@ -35,6 +35,5 @@ int high_resolution_clock_method()
     std::cout <<  << timeInterval.count() << "ms\n";
 }
 
-
 // rand()函数: 产生一个0到RAND_MAX之间的伪随机整数
 // srand(int)函数: 用来设置rand()产生随机数时的随机数种子

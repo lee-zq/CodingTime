@@ -9,6 +9,7 @@
         "-std=c++17",
         "-g",
         "-fdiagnostics-color=always",
+        "-mavx2",
         "${file}",
         "-o",
         "${fileDirname}/${fileBasenameNoExtension}.o"
