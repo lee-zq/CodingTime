@@ -1,4 +1,5 @@
-#include "simd_header.h"
+#include "include/base_func.hpp"
+#include "include/x86_sse.hpp"
 
 inline float fast_tanh(float x)
 {

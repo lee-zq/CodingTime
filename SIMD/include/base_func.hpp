@@ -1,21 +1,15 @@
-#include <iostream>
-
-#ifdef __AVX__
-#include <immintrin.h>
-#else
-#warning No AVX support - will not compile
-#endif
-
-#include <vector>
-#include <string>
 #include <algorithm>
-#include <numeric>
-#include <functional>
 #include <cmath>
+#include <functional>
 #include <iostream>
+#include <numeric>
+#include <string>
+#include <vector>
+#include <random>
+#include <chrono>
 
 // timer
-#include "../base_func/timer.hpp"
+#include "../../base_func/timer.hpp"
 
 template <typename T>
 std::vector<T> get_rand_vec(T base, int len = 100, int seed = 0)

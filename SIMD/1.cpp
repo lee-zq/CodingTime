@@ -1,4 +1,5 @@
-#include "simd_header.h"
+#include "include/base_func.hpp"
+#include "include/x86_sse.hpp"
 
 void add_two_vec_native(const std::vector<int>& vec1, const std::vector<int>& vec2, std::vector<int>& vec3)
 {
