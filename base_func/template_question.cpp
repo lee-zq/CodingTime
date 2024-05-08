@@ -14,11 +14,23 @@ void ShowList(Args... args)
     int arr[] = {(PrintArg(args), 0)...};
     cout << endl;
 }
+
+void ShowListV2()
+{
+    cout << endl;
+}
+template <class T, class... Args>
+void ShowListV2(T first, Args... args)
+{
+    cout << first << " ";
+    ShowListV2(args...);
+}
+
 int main()
 {
     // ShowList(1);
     // ShowList(1, 'A');
-    // ShowList(1, 'A', std::string("sort"));
+    ShowListV2(1, 'A', std::string("sort"));
     using namespace std;
     cout << is_integral<int>::value << endl;    //int属于整型，所以输出1
     cout << is_integral<double>::value << endl; //double不属于整型，所以输出0
