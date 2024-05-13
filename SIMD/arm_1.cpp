@@ -1,5 +1,5 @@
-#include "include/base_func.hpp"
 #include "include/arm_neon.hpp"
+#include "include/base_func.hpp"
 
 //判断两个vector是否相等
 static bool is_equals_vector(const std::vector<float>& vec_a, const std::vector<float>& vec_b)
@@ -91,5 +91,14 @@ static int test_neon()
 
 int main(int, char*[])
 {
+    std::vector<int> src(100);
+    for (size_t i = 0; i < src.size(); i++)
+    {
+        src[i] = i;
+    }
+
+    int32x4x2_t v8_src0;
+
+    v8_src0 = vld2q_s32(src.data());
     return test_neon();
 }
