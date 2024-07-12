@@ -45,6 +45,54 @@ static void neon_vector_mul(const std::vector<float>& vec_a, const std::vector<f
         vec_result[i] = vec_a[i] * vec_b[i];
     }
 }
+
+static void neon_asm_vector_mul(const std::vector<float>& vec_a,
+                                const std::vector<float>& vec_b,
+                                std::vector<float>& vec_result)
+{
+    int nn = vec_a.size() >> 2;
+    int remain = vec_a.size() - (nn << 2);
+    float* a_data_ptr = vec_a.data();
+    float* b_data_ptr = vec_b.data();
+    float* res_data_ptr = vec_res.data();
+    //neon process
+    asm volatile
+    {
+        "0:                       \n" // while(??)
+        "vld1.s32 {d0-d1}, [%0]!  \n" // 从%0 加载 4 float32, 并自增指针
+        "vld1.s32 {d2-d3}, [%1]!  \n" // 从%0 加载 4 float32, 并自增指针
+        "vmul.f32 q2, q0, q1"
+        "vst1.s32 {d4-d5}, [%2]!  \n" //把寄存器的内容存到tmpColSumPtr地址指向的内存
+        "subs %3, #1              \n" //n-=1,并设置flag
+        "bne  0b                  \n" //bne判断nn是否为0， 不为0则继续循环跳到开头0标记出继续执行
+            // output, 在汇编代码中会被修改的变量，"=r"表示允许直接从通用寄存器中读取，可加别名
+            : "=r"(a_data_ptr),
+              "=r"(b_data_ptr),
+              "=r"(res_data_ptr),
+              "=r"(nn)
+            // input，在汇编代码中会用到的变量，必须用数字从0开始标识供汇编函数内使用，可加别名
+            : "0"(a_data_ptr),
+              "1"(b_data_ptr),
+              "2"(res_data_ptr),
+              "3"(nn)
+            //Clobbers
+            : "cc", "memory", "q0", "q1", "q2"
+    }
+    for (int i = 0; i < (int)vec_result.size() - 3; i += 4)
+    {
+        const auto data_a = vld1q_f32(&vec_a[i]);
+        const auto data_b = vld1q_f32(&vec_b[i]);
+        float* dst_ptr = &vec_result[i];
+        const auto data_res = vaddq_f32(data_a, data_b);
+        vst1q_f32(dst_ptr, data_res);
+    }
+    //normal process
+    for (; i < (int)vec_result.size(); i++)
+    {
+        vec_result[i] = vec_a[i] * vec_b[i];
+    }
+}
+
 //测试函数
 //FuncCostTimeHelper是一个计算时间消耗的helper类
 static int test_neon()

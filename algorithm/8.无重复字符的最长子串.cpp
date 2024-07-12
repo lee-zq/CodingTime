@@ -9,7 +9,6 @@ public:
     int lengthOfLongestSubstring(string s) {
         std::set<char> window;
         int left = 0;
-        int right = 0;
         int max_value = 0;
         for (int right = 0; right < s.size();right++){
             char x = s[right];

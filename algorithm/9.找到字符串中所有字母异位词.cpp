@@ -26,10 +26,13 @@ public:
         {
             ret.push_back(0);
         }
-        for (int i = p.size(); i < s.size(); i++)
+        int p_len = p.size();
+        for (int i = p_len; i < s.size(); i++)
         {
-            sCount[s[i - p.size()] - 'a']--;
-            sCount[s[i] - 'a']++;
+            int start_pos = s[i - p_len] - 'a';
+            int end_pos = s[i] - 'a';
+            sCount[start_pos]--;
+            sCount[end_pos]++;
             if (pCount == sCount)
             {
                 ret.push_back(i - p.size() + 1);

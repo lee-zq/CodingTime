@@ -29,9 +29,11 @@ int topk_heap(std::vector<int>& src, int k, std::vector<int>& dst)
         return -1;
     dst = std::vector<int>(src.begin(), src.begin() + k);
     std::make_heap(dst.begin(), dst.end(), std::greater<int>());
-    for (int i = k; i < src.size();i++){
+    for (int i = k; i < src.size(); i++)
+    {
         int& top = dst[0];
-        if (top < src[i]){
+        if (top < src[i])
+        {
             std::pop_heap(dst.begin(), dst.end(), std::greater<int>());
             dst[dst.size() - 1] = src[i];
             std::push_heap(dst.begin(), dst.end(), std::greater<int>());
@@ -43,24 +45,20 @@ int topk_heap(std::vector<int>& src, int k, std::vector<int>& dst)
 
 int main()
 {
-    int a = 11;
-    std::vector<int> src(1000000);
+    std::vector<int> src(10000000);
     std::iota(src.begin(), src.end(), 0);
     std::random_shuffle(src.begin(), src.end(), [](int i) { return rand() % i; });
     std::vector<int> dst;
-    std::chrono::high_resolution_clock::time_point beginTime = std::chrono::high_resolution_clock::now();
-    std::chrono::steady_clock::time_point beginTime1 = std::chrono::steady_clock::now();
+    auto beginTime = std::chrono::high_resolution_clock::now();
     topk_heap(src, 1000, dst);
-    std::chrono::high_resolution_clock::time_point endTime = std::chrono::high_resolution_clock::now();
+    auto endTime = std::chrono::high_resolution_clock::now();
     std::chrono::milliseconds timeInterval = std::chrono::duration_cast<std::chrono::milliseconds>(endTime - beginTime);
-    std::chrono::steady_clock::time_point endTime1 = std::chrono::steady_clock::now();
     std::cout << timeInterval.count() << "ms\n";
-    std::cout << std::chrono::duration_cast<std::chrono::milliseconds>(endTime1 - beginTime1).count() << "ms\n";
 
-    for (auto& i : dst)
-    {
-        std::cout << i << " ";
-    }
+    // for (auto& i : dst)
+    // {
+    //     std::cout << i << " ";
+    // }
     std::cout << std::endl;
     return 0;
 }

@@ -86,18 +86,15 @@ public:
         return true;
     }
 
-    void print() const
+    void print(int channel=0) const
     {
         for (int i = 0; i < rows; i++)
         {
             for (int j = 0; j < cols; j++)
             {
-                for (int k = 0; k < channels; k++)
-                {
-                    std::cout << static_cast<int>(getPixel(i, j, k)) << " ";
-                }
-                std::cout << std::endl;
+                std::cout << static_cast<int>(getPixel(i, j, channel)) << " ";
             }
+            std::cout << std::endl;
         }
     }
 
