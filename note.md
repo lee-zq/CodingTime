@@ -52,7 +52,7 @@ github 连接失败处理：
 ssh -vT git@github.com
 ssh-agent bash
 ssh-add /root/.ssh/id_rsa_github
-
+test git
 
 1. 感知技术：感知技术是自动驾驶的基础，通过使用各种传感器（如雷达、摄像头、激光雷达等）来感知周围环境，包括道路、车辆、行人、交通标志等。感知技术通过数据处理和算法分析，生成车辆周围环境的数字化表示，为自动驾驶做出决策提供有关环境信息。
 
