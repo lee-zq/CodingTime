@@ -11,9 +11,9 @@ idx代表当前可选择的数字在candidates中的索引，status表示目前�
 candidates是和idx一起确定选择项。
 在选择某一个idx的数字时，有选择和不选择当前数字两种选择，分别递归。
 1. 不选择则直接跳过：idx+1且其他参数不变
-2. 在目标值比当前值大的时候，考虑选择当前值，则target变为target-candidates[idx],idx++,status添加当前选项，
-3. 结束递归后需要撤销当前选择。
-4.终止条件是idx越界或target刚好衰减到0（表示组合的和刚好是target）
+2. 在目标值比当前值大的时候，考虑选择当前值，则target变为target-candidates[idx],idx++,status添加当前选项
+3. 结束递归后需要撤销当前选择
+4. 终止条件是idx越界或target刚好衰减到0（表示组合的和刚好是target）
 */
     vector<vector<int>> combinationSum(vector<int>& candidates, int target)
     {

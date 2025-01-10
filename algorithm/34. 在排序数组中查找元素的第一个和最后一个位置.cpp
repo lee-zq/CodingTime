@@ -41,7 +41,7 @@ public:
         return {left, right};
     }
 
-    int find_target(vector<int>& nums, int target)
+    int find_target(vector<int>& nums, int target)  // 二分查找
     {
         int left = 0;
         int right = nums.size() - 1;

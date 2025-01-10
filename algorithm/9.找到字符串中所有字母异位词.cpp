@@ -35,7 +35,7 @@ public:
             sCount[end_pos]++;
             if (pCount == sCount)
             {
-                ret.push_back(i - p.size() + 1);
+                ret.push_back(i - p_len + 1);
             }
         }
         return ret;

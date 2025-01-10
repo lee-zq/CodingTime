@@ -1,6 +1,10 @@
 #include "header.hpp"
 
 
+/*
+题目：二维数组中1为岛屿，0为海洋。求岛屿数量等问题
+*/
+
 class Solution
 {
 public:
@@ -28,7 +32,7 @@ public:
     // 越界或访问到海洋或已访问地点则直接返回，或者标记该点并访问点四周的位置。
     void default_dfs(vector<vector<char>>& grid, int r, int c)
     {
-        // 地图越界
+        // 岛屿越界
         if (!inArea(grid, r, c))
         {
             return;

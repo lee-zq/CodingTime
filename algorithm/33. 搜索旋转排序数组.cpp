@@ -17,7 +17,7 @@ public:
             if (nums[mid]==target){
                 return mid;
             }
-            if (nums[0] <= nums[mid])
+            if (nums[0] <= nums[mid])  // 左侧有序区间
             {
                 if (nums[0] <= target && target < nums[mid])
                 {
@@ -28,7 +28,7 @@ public:
                     left = mid + 1;
                 }
             }
-            else
+            else  // 右侧有序区间
             {
                 if (nums[mid] < target && target <= nums[nums.size()-1])
                 {
@@ -43,3 +43,13 @@ public:
         return -1;
     }
 };
+
+// unittest
+int main()
+{
+    std::vector<int> x = {6, 7, 8, 9, 0, 1, 2, 3 ,4, 5};
+    Solution s;
+    int ret = s.search(x, 7);
+    std::cout << ret << std::endl;
+    return 0;
+}

@@ -54,7 +54,7 @@ static void neon_asm_vector_mul(const std::vector<float>& vec_a,
     int remain = vec_a.size() - (nn << 2);
     float* a_data_ptr = vec_a.data();
     float* b_data_ptr = vec_b.data();
-    float* res_data_ptr = vec_res.data();
+    float* res_data_ptr = vec_result.data();
     //neon process
     asm volatile
     {

@@ -21,4 +21,17 @@ public:
             nums[i] = tmp[i];
         }
     }
+};
+
+// unittest
+int main()
+{
+    std::vector<int> x = {1, 2, 3, 4, 5, 6, 7};
+    Solution s;
+    s.rotate(x, 3);
+    for (auto i : x)
+    {
+        std::cout << i << std::endl;
+    }
+    return 0;
 }
