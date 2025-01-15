@@ -24,8 +24,9 @@
                 //     "ignoreFailures": false
                 // }
             ],
-        "preLaunchTask": "C/C++:build",
+        // "preLaunchTask": "C/C++:build",
         // "preLaunchTask": "C/C++:asm",
+        "preLaunchTask": "CUDA:build",
     },
     {
         "name": "Python: Current File",

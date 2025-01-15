@@ -27,7 +27,7 @@ public:
         {
             if (selected[i]==false){
                 state.push_back(nums[i]);
-                selected[i] = true;
+
                 backtrack(state, nums, selected, result);
                 selected[i] = false;
                 state.pop_back();

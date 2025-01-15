@@ -4,7 +4,7 @@ class Solution
 {
 public:
 /*
-解析：一维dp问题，斐波那契数列（状态压缩）
+解析：一维dp问题，斐波那契数列（状态压缩）状态转移方程：dp[i] = dp[i-1] + dp[i-2]
 */
     int climbStairs(int n)
     {
@@ -14,7 +14,6 @@ public:
         vector<int> dp(n);
         dp[0] = 1;
         dp[1] = 2;
-        // dp[i] = dp[i-1] + dp[i-2]
         for (size_t i = 2; i < n; i++)
         {
             dp[i] = dp[i - 1] + dp[i - 2];
@@ -28,9 +27,8 @@ public:
         {
             return n;
         }
-        dp0 = 1;
-        dp1 = 2;
-        // dp[i] = dp[i-1] + dp[i-2]
+        int dp0 = 1;
+        int dp1 = 2;
         int tmp;
         for (size_t i = 2; i < n; i++)
         {
@@ -41,3 +39,12 @@ public:
         return dp1;
     }
 };
+
+// unittest
+int main()
+{
+    Solution s;
+    auto ret = s.climbStairs(30);
+    printf("ret = %d\n", ret);
+    return 0;
+}

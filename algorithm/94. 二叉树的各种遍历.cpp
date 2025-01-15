@@ -19,54 +19,58 @@ public:
 */
     vector<int> inorderTraversal(TreeNode* root)
     {
-        vector<int> ret;
-        inorder(root, ret);
-        return ret;
+        vector<int> res;
+        inorder(root, res);
+        // preorder(root, res);
+        // postorder(root, res);
+        return res;
     }
 
-    void inorder(TreeNode* root, vector<int>& ret)
+    void inorder(TreeNode* root, vector<int>& res)
     {
         if (root == nullptr)
         {
             return;
         }
-        inorder(root->left, ret);
-        ret.push_back(root->value);
-        inorder(root->right, ret);
+        inorder(root->left, res);
+        res.push_back(root->val);
+        inorder(root->right, res);
     }
 
-    void preorder(TreeNode* root, vector<int>& ret)
+    void preorder(TreeNode* root, vector<int>& res)
     {
         if (root == nullptr)
         {
             return;
         }
-        ret.push_back(root->val);
-        preorder(root->left, ret);
-        preorder(root->right, ret);
+        res.push_back(root->val);
+        preorder(root->left, res);
+        preorder(root->right, res);
     }
 
-    void postorder(TreeNode* root, vector<int>& ret)
+    void postorder(TreeNode* root, vector<int>& res)
     {
         if (root == nullptr)
         {
             return;
         }
-        postorder(root->left, ret);
-        postorder(root->right, ret);
-        ret.push_back(root->val);
+        postorder(root->left, res);
+        postorder(root->right, res);
+        res.push_back(root->val);
     }
 
-    void bfs_order(TreeNode* root, vector<int>& ret)
+    void bfs_order(TreeNode* root, vector<int>& res)
     {
-        ret.clear();
-        queue<TreeNode*> q = {root};
+        res.clear();
+        queue<TreeNode*> q;
+        q.push(root);
         while (!q.empty())
         {
-            TreeNode* node = q.pop();
+            TreeNode* node = q.front();
+            q.pop();
             if (node != nullptr)
             {
-                ret.push_back(node->val);
+                res.push_back(node->val);
                 q.push(node->left);
                 q.push(node->right);
             }

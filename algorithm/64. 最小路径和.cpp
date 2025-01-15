@@ -16,7 +16,7 @@ dp表第一行和第一列可以方便求出，每个位置的最小路径是前
             for (size_t j = 0; j < dp[0].size(); j++)
             {
                 if (i==0&&j==0){
-                    base = grid[i][j];
+                    base = 0;
                     continue;
                 }else if(i==0&&j!=0){
                     base = dp[i][j - 1];
@@ -33,13 +33,13 @@ dp表第一行和第一列可以方便求出，每个位置的最小路径是前
         }
         return dp.back().back();
     }
-    int minPathSum(vector<vector<int>>& grid) {
-        vector<int>> dp_col(grid[0].size(), 0);
-        vector<int>> dp_row(grid.size(), 0);
+
+    int minPathSum_v2(vector<vector<int>>& grid) {
+        vector<int> dp_col(grid[0].size(), 0);
         dp_col[0] = grid[0][0];
         for (size_t i = 1; i < dp_col.size(); i++)
         {
-            dp_col[i] = dp_col[i - 1] + gird[0][i];
+            dp_col[i] = dp_col[i - 1] + grid[0][i];
         }
 
         for (size_t i = 1; i < grid.size(); i++)
@@ -47,13 +47,13 @@ dp表第一行和第一列可以方便求出，每个位置的最小路径是前
             for (size_t j = 0; j < grid[0].size(); j++)
             {
                 if(j==0){
-                    dp[j] = dp[j] + gird[i][0];
+                    dp_col[j] = dp_col[j] + grid[i][0];
                 }else{
-                    dp[j] = std::min(dp[j-1], dp[j]) + grid[i][j];
+                    dp_col[j] = std::min(dp_col[j-1], dp_col[j]) + grid[i][j];
                 }
             }
         }
-        return dp.back();
+        return dp_col.back();
     }
 };
 

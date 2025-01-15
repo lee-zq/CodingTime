@@ -26,7 +26,7 @@ public:
         }
     }
 
-    void sortColors(vector<int>& nums) {
+    void sortColors_V2(vector<int>& nums) {
         int p = 0;
         for (size_t i = 0; i < nums.size(); i++)
         {
@@ -46,3 +46,15 @@ public:
         }
     }
 };
+
+// unittest
+int main(){
+    Solution s;
+    vector<int> nums = {2,1,0,2,1,2,2,1,0};
+    s.sortColors_V2(nums);
+    for (size_t i = 0; i < nums.size(); i++)
+    {
+        std::cout << nums[i] << " ";
+    }
+    return 0;
+}
