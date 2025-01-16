@@ -19,9 +19,11 @@ public:
     T* get(){
         return p_;
     }
+
     int* cnt(){
         return c_;
     }
+    
     my_shared_ptr(const my_shared_ptr<T>& src){
         p_ = src.get();
         c_ = src.cnt();
