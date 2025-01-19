@@ -45,7 +45,7 @@ void vector_add_host(float *a, float *b, float *c, int n)
     cudaMemcpy(dev_b, b, n * sizeof(float), cudaMemcpyHostToDevice);
 
     // 启动kernel
-    transposeNative<<<(n+127)/128, 128>>>(dev_a, dev_b, 1000, 1000);
+    transposeNative<<<(n+127)/128, 128>>>(dev_a, dev_b, 10000, 10000);
     vector_add<<<(n + 255) / 256, 256>>>(dev_a, dev_b, dev_c, n);
     vector_add<<<(n + 255) / 256, 256>>>(dev_a, dev_b, dev_c, n);
     vector_add<<<(n + 255) / 256, 256>>>(dev_a, dev_b, dev_c, n);
@@ -85,7 +85,7 @@ void transpose_host(float* input, float* output, int m, int n)
 
 int main()
 {
-    int n = 1000000;
+    int n = 100000000;
     float *a = new float[n];
     float *b = new float[n];
     float *c = new float[n];

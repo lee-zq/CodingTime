@@ -21,6 +21,12 @@ nsight system运行命令：
 分离运行: 在linux上执行 nsys profile --stats=true --trace=cuda,nvtx ./cuda_c_api.o ，
 将生成的两个文件拷贝出来，在windows上打开后缀为.nsys-rep文件，另一个文件也要保证在同一目录下，部分功能需要读取。
 
+cuda代码的优化思路（top-down策略，不要直接深入到汇编层面过度优化而忽略了热点）：
+1. 先使用nsight system进行性能分析，找到瓶颈
+2. 如果是kernel耗时问题，则使用nsight compute进行核函数分析，找到核函数的瓶颈进行优化
+3. 如果是阻塞并行问题，则使用nsight system进行阻塞问题分析，通过cuda流进行计算和访存并行优化
+4. 重新使用nsight system进行性能分析，查看优化效果，重复2-4步骤，直到满意
+
 nsight环境检查：
 nsys status -e
 nsys --version

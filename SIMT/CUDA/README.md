@@ -9,9 +9,9 @@
 ## 优化案例
 1. cuda element-wise核函数实现及其优化 
 2. cuda binary-op核函数实现及其优化
-3. cuda 矩阵乘实现及其优化
-4. cuda 规约实现及其优化
-5. cuda 矩阵转置实现及其优化
+3. cuda 矩阵转置实现及其优化
+4. cuda 矩阵乘实现及其优化
+5. cuda 规约实现及其优化
 
 ## 进阶内容
 1. cuBLAS库使用
